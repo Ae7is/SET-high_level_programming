@@ -1,6 +1,7 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 """Import the add function and display the result."""
 from add_0 import add
+
 
 if __name__ == "__main__":
     a = 1
