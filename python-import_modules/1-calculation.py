@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Do some basic calculations using calculator_1 functions."""
+"""Do some basic calculations."""
 from calculator_1 import add, sub, mul, div
 
 
