@@ -9,4 +9,4 @@ def print_matrix_integer(matrix=[[]]):
         matrix: a list of lists of integers
     """
     for row in matrix:
-        print(" ".join("{}".format(num) for num in row))
+        print(" ".join("{:d}".format(num) for num in row))
