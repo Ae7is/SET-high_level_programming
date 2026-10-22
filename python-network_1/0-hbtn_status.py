@@ -1,6 +1,5 @@
-
 #!/usr/bin/python3
-"""Fetch the status page using urllib."""
+"""Fetch the status page of the intranet using urllib."""
 import urllib.request
 
 if __name__ == "__main__":
@@ -11,4 +10,3 @@ if __name__ == "__main__":
         print("\t- type: {}".format(type(body)))
         print("\t- content: {}".format(body))
         print("\t- utf8 content: {}".format(body.decode("utf-8")))
-
