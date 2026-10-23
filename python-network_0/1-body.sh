@@ -1,2 +1,3 @@
 #!/bin/bash
-curl -sfL "$1"
+# Send a GET request and display the body of the response (following redirects).
+curl -sL "$1"
