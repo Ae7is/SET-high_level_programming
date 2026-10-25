@@ -1,0 +1,72 @@
+Tests for the MyList class
+==========================
+
+Load the class under test:
+
+>>> MyList = __import__('1-my_list').MyList
+
+Basic use:
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+The class is a list:
+
+>>> isinstance(my_list, list)
+True
+>>> issubclass(MyList, list)
+True
+
+An empty list:
+
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
+
+A list with one element:
+
+>>> single = MyList([7])
+>>> single.print_sorted()
+[7]
+
+Negative numbers and zero:
+
+>>> mixed = MyList([3, -1, 0, 2, -5])
+>>> mixed.print_sorted()
+[-5, -1, 0, 2, 3]
+
+Duplicate values:
+
+>>> dup = MyList([2, 2, 1, 1])
+>>> dup.print_sorted()
+[1, 1, 2, 2]
+
+Lists that are already sorted or sorted backwards:
+
+>>> MyList([1, 2, 3]).print_sorted()
+[1, 2, 3]
+>>> MyList([3, 2, 1]).print_sorted()
+[1, 2, 3]
+
+The original list is never changed:
+
+>>> original = MyList([3, 1, 2])
+>>> original.print_sorted()
+[1, 2, 3]
+>>> print(original)
+[3, 1, 2]
+
+Very large numbers:
+
+>>> MyList([10 ** 20, 5, -10 ** 20]).print_sorted()
+[-100000000000000000000, 5, 100000000000000000000]
