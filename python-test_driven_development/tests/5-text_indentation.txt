@@ -1,0 +1,100 @@
+Tests for the text_indentation function
+=======================================
+
+Load the function under test. The function does not print a final new
+line, so each example below is followed by print() to end the output:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+All three characters:
+
+>>> text_indentation("Hello. How are you? Fine: thanks"); print()
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Fine:
+<BLANKLINE>
+thanks
+
+A text with several sentences:
+
+>>> text_indentation("Lorem ipsum dolor sit amet. Quonam modo? Non autem hoc: igitur ne illud quidem."); print()
+Lorem ipsum dolor sit amet.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Non autem hoc:
+<BLANKLINE>
+igitur ne illud quidem.
+<BLANKLINE>
+<BLANKLINE>
+
+The character ! does not split the text:
+
+>>> text_indentation("Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres"); print()
+Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+
+A text without special characters:
+
+>>> text_indentation("Hello World"); print()
+Hello World
+
+Spaces at the start and at the end of each line are removed:
+
+>>> text_indentation("  Hello.   World  "); print()
+Hello.
+<BLANKLINE>
+World
+
+Delimiters without spaces and repeated delimiters:
+
+>>> text_indentation("A?B:C.D"); print()
+A?
+<BLANKLINE>
+B:
+<BLANKLINE>
+C.
+<BLANKLINE>
+D
+
+>>> text_indentation("a.. b"); print()
+a.
+<BLANKLINE>
+.
+<BLANKLINE>
+b
+
+A text that is only a delimiter, and an empty text:
+
+>>> text_indentation("."); print()
+.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation(""); print()
+<BLANKLINE>
+
+Texts that are not strings:
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(["Hello."])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+Missing argument:
+
+>>> text_indentation()  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

@@ -1,0 +1,83 @@
+Tests for the print_square function
+===================================
+
+Load the function under test:
+
+>>> print_square = __import__('4-print_square').print_square
+
+Printing squares:
+
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(1)
+#
+
+>>> print_square(2)
+##
+##
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+A square of size 0 prints nothing:
+
+>>> print_square(0)
+
+A negative size:
+
+>>> print_square(-1)
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+
+Sizes that are not integers:
+
+>>> print_square("3")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(3.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(-3.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square([2])
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square(float('inf'))
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Missing argument:
+
+>>> print_square()  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
